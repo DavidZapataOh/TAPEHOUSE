@@ -12,6 +12,14 @@ export default function Methodology() {
       title="How we measured it"
       lede="Every figure on this site comes from somewhere you can check. This is where, and how."
     >
+      <Entry heading="$109.2 billion against $31.2 billion">
+        <p>
+          Morgan Stanley’s annual report on Form 10-K for fiscal year 2025, Wealth Management loans:
+          “Securities-based lending and Other” of $109,201 million, and margin loans of $31,214 million.
+          The first category includes lending other than securities-based loans, so read it as an upper
+          bound. That most of it is borrowed to avoid selling is our reading, not the filing’s.
+        </p>
+      </Entry>
       <Entry heading="55.7 to 80.8 hours of silence">
         <p>
           The gaps between consecutive updates of the reference equity price feed on Robinhood Chain, read

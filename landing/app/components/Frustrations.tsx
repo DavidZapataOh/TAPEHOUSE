@@ -1,14 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { clamp01, onScrollFrame, prefersStill } from "./scroll";
 
 const LINES = [
-  "Selling your best performer just to pay for something.",
-  "Watching it keep climbing after you sold.",
-  "Four stocks, priced like four separate loans.",
-  "A Sunday when your own portfolio won’t answer.",
-  "Losing the whole position over a drop that lasted two hours.",
+  "A tax bill for touching your own money.",
+  "Four holdings, treated like four strangers.",
+  "A loan that still thinks it’s Friday afternoon.",
+  "A Sunday when your own portfolio won’t pick up.",
+  "Learning your liquidation price the day it arrives.",
 ];
 
 /** Chapter two: the frustration, before a single word of mechanism. */
@@ -54,9 +55,11 @@ export function Frustrations() {
         </ol>
 
         <p className="lede mt-[clamp(4rem,9vw,8rem)] max-w-[52ch] text-body lg:ml-[32%]">
-          None of this is new. Professional desks have been margined on their whole portfolio for
-          decades, and wealthy families have borrowed against their shares instead of selling them for
-          longer than that. On-chain, every Stock Token is still priced alone.
+          Borrowing so you don’t have to sell is not a niche. At Morgan Stanley’s wealth business, clients
+          owe <span className="num font-semibold text-strong">$109.2 billion</span> in securities-based and
+          other lending, against <span className="num font-semibold text-strong">$31.2 billion</span> in
+          margin loans. On-chain, every Stock Token is still priced alone.{" "}
+          <Link href="/methodology" className="text-strong underline">Where that comes from</Link>.
         </p>
       </div>
     </section>

@@ -84,11 +84,11 @@ export function Footer() {
 
         <div className="mt-[clamp(3.5rem,7vw,6rem)] border-t border-rule pt-7">
           <p className="max-w-[108ch] text-[12.5px] leading-[1.6] text-faint">
-            Tapehouse is a smart-contract protocol, not a broker, a bank or a regulated financial services
-            provider, and nothing here is investment advice or an offer of credit. It currently runs on a test
-            network, where assets have no value. Stock Tokens are tokenised securities issued by a third party
-            and carry risks that owning shares directly does not. Borrowing against a portfolio can lose you
-            part or all of it, including while the underlying market is closed.{" "}
+            Tapehouse is software, not a broker or a bank, and it holds no licence to provide financial
+            services. Nothing here is investment advice or an offer of credit, and today it runs on a test
+            network, where assets have no value. A Stock Token is a debt security of its issuer, not a share:
+            it follows the price and gives you no shareholder rights. Borrowing against a portfolio can lose
+            you part or all of it, including while the underlying market is closed.{" "}
             <Link href="/risk" className="text-muted underline hover:text-strong">
               Read the full risk disclosure
             </Link>

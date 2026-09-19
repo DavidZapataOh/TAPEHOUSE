@@ -37,7 +37,7 @@ Portfolio margin for Stock Tokens. The whole portfolio backs one loan, so a dive
 - An adapter exposing the price and the band through a standard aggregator interface, with a runnable example.
 - Terminology is fixed: "Stock Tokens", "the band", "the session", "capacity", "liquidation price", "the seal".
 - Undecided: the headline capacity figure. It comes from the backtest and must not be stated until that result exists.
-- Tapehouse is not a broker. Stock Tokens are tokenised securities issued by a third party.
+- Tapehouse is not a broker. A Stock Token is a debt security of its issuer, not a share: no shareholder rights, cash redemption only, and not offered to United States persons.
 
 ## Brand Commitments
 

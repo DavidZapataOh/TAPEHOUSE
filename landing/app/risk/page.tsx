@@ -11,17 +11,24 @@ export default function Risk() {
     <PlainPage title="Read this before you borrow" lede="Plainly, and in full: what Tapehouse is, and what can go wrong.">
       <Entry heading="What Tapehouse is">
         <p>
-          Tapehouse is a smart-contract protocol. It is not a broker, a bank or a regulated financial
-          services provider. Nothing on this site is investment, legal or tax advice, and nothing here is
-          an offer of credit. Tapehouse currently runs on a test network, where assets have no value.
+          Tapehouse is software: a set of smart contracts and this interface to them. It is not a broker
+          or a bank, it holds no licence to provide financial services, and nobody at Tapehouse takes
+          custody of your assets. Nothing on this site is investment, legal or tax advice, and nothing
+          here is an offer of credit. Today it runs on a test network, where assets have no value.
         </p>
       </Entry>
-      <Entry heading="What a Stock Token is">
+      <Entry heading="What a Stock Token is, and is not">
         <p>
-          Stock Tokens are tokenised securities issued by a third party. They give economic exposure to an
-          underlying share or fund; they are not the share itself. They carry risks that owning shares
-          directly does not: loss or compromise of your keys, limited redemption, thin liquidity, prices
-          that diverge from the underlying share, and regulation that is uncertain and still changing.
+          A Stock Token is not a share. It is a debt security of the company that issues it, built to
+          follow the price of a share or a fund. Holding one gives you no vote and no standing as a
+          shareholder, and it can only be redeemed for cash, through the providers the issuer authorises.
+        </p>
+        <p>
+          That has consequences. You depend on the issuer staying solvent and honouring the token, which
+          you would not if you owned the share. The token can trade away from the share it follows, most
+          of all when the underlying market is shut. Splits and other corporate actions reach you through
+          the token’s own adjustment, not through a broker. And issuers do not offer Stock Tokens to
+          everyone: United States persons, among others, are excluded.
         </p>
       </Entry>
       <Entry heading="What borrowing can cost you">

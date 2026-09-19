@@ -176,8 +176,8 @@ export function Hero() {
           className="hero-copy arrive absolute inset-x-0 bottom-5 z-10 mx-auto max-w-[760px] px-5 text-center text-[12.5px] leading-snug text-[rgb(245_242_236/0.72)] sm:bottom-7"
           style={{ "--i": 4 } as React.CSSProperties}
         >
-          Tapehouse is not a broker. Stock Tokens are tokenised securities issued by a third party and
-          carry risks that owning shares directly does not.
+          Tapehouse is not a broker. A Stock Token is a debt security of its issuer, not a share: it follows
+          the price and gives you no shareholder rights.
         </p>
 
         <div ref={screen} className="hero-screen z-20">
