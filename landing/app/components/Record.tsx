@@ -24,8 +24,7 @@ export function Record() {
             </h2>
             <p className="lede mt-8 max-w-[56ch]">
               Every Sunday night we seal the band we expect Monday to open inside. Every Monday the
-              market grades it. Nobody else on this chain shows you the weekends they missed
-              <a href="#note-8" className="fn text-accent" aria-label="Note 8">8</a>.
+              market grades it. Nobody else on this chain shows you the weekends they missed.
             </p>
           </div>
           <Artwork src="/art/i3-cards.jpg" alt="A tall stack of sealed cards with one pulled out of line." className="order-first lg:order-none" />

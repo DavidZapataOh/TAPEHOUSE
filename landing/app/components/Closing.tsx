@@ -1,4 +1,5 @@
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "#open-app";
+import { APP_URL } from "../site";
+
 
 /** The bookend: the same hall as the opening shot, on Monday morning. */
 export function Closing() {

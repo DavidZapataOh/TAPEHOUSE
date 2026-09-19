@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { APP_URL } from "../site";
 import { Mark } from "./Mark";
 import { Seal } from "./Seal";
 import { PortfolioScreen } from "./PortfolioScreen";
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "#open-app";
 
 /** Where the lit screen sits inside the scene plate, as fractions of the plate. */
 const PLATE = { aspect: 1536 / 1024, screenX: 0.469, screenY: 0.658, screenW: 0.079 };
@@ -154,10 +154,8 @@ export function Hero() {
             className="arrive mt-6 max-w-[58ch] text-pretty text-[clamp(1.02rem,1.35vw,1.22rem)] leading-[1.5] text-[rgb(245_242_236/0.84)]"
             style={{ "--i": 1 } as React.CSSProperties}
           >
-            Borrow against every Stock Token you hold
-            <a href="#note-1" className="fn" aria-label="Note 1">1</a>, with the liquidation price stated
-            before you sign and a price that keeps moving when the market doesn’t
-            <a href="#note-2" className="fn" aria-label="Note 2">2</a>.
+            Borrow against every Stock Token you hold, with the liquidation price stated
+            before you sign and a price that keeps moving when the market doesn’t.
           </p>
           <div
             className="arrive mt-9 flex flex-wrap items-center justify-center gap-3 text-[15px]"

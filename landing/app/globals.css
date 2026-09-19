@@ -160,20 +160,6 @@ a {
   font-feature-settings: "zero" 1;
 }
 
-/* Footnote markers live inside the sentence. */
-.fn {
-  font-size: 0.62em;
-  vertical-align: super;
-  line-height: 0;
-  margin-left: 0.08em;
-  font-weight: 600;
-  text-decoration: none;
-  font-variant-numeric: lining-nums;
-}
-.fn:hover {
-  text-decoration: underline;
-}
-
 /* ── Fields · a change of colour is a change of chapter ────────────────
    Each field owns a whole region and rebinds the tokens, so every component
    inside it keeps using the same names. The landing's fields are fixed by the
@@ -201,6 +187,7 @@ a {
   letter-spacing: -0.03em;
   color: var(--text-strong);
   text-wrap: balance;
+  scroll-margin-top: 5rem;
 }
 .lede { font-size: clamp(1.08rem, 1.45vw, 1.32rem); line-height: 1.55; text-wrap: pretty; }
 

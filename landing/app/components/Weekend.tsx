@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { clamp01, onScrollFrame, prefersStill } from "./scroll";
 
@@ -47,14 +48,11 @@ export function Weekend() {
         </h2>
         <p className="lede mt-8 max-w-[60ch]">
           We measured it before we built it. Every weekend the reference price feed on this chain goes
-          silent for <span className="num font-semibold text-strong">55.7 to 80.8 hours</span>
-          <a href="#note-3" className="fn text-accent" aria-label="Note 3">3</a>, while an
+          silent for <span className="num font-semibold text-strong">55.7 to 80.8 hours</span>, while an
           around-the-clock source kept answering{" "}
-          <span className="num font-semibold text-strong">288 times out of 288</span>
-          <a href="#note-4" className="fn text-accent" aria-label="Note 4">4</a>. People don’t stop
+          <span className="num font-semibold text-strong">288 times out of 288</span>. People don’t stop
           either: <span className="num font-semibold text-strong">29.9%</span> of SPY transfers happen
-          on a Saturday or a Sunday
-          <a href="#note-5" className="fn text-accent" aria-label="Note 5">5</a>.
+          on a Saturday or a Sunday.
         </p>
 
         <div ref={root} className="mt-[clamp(3.5rem,7vw,6rem)]">
@@ -116,7 +114,8 @@ export function Weekend() {
           </div>
           <p className="mt-5 max-w-[70ch] text-[13.5px] leading-relaxed text-muted">
             One measured weekend, 28–31 August 2026, drawn to scale. Over the Labor Day weekend the same
-            silence lasted 80.8 hours.
+            silence lasted 80.8 hours.{" "}
+            <Link href="/methodology" className="text-strong underline">How we measured it</Link>.
           </p>
         </div>
       </div>

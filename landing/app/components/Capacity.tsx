@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Artwork } from "./Artwork";
 
@@ -78,8 +79,7 @@ export function Capacity() {
               They price one stock. We price the portfolio.
             </h2>
             <p className="lede mt-8 max-w-[56ch]">
-              Most lenders here apply one flat limit to each Stock Token
-              <a href="#note-6" className="fn text-accent" aria-label="Note 6">6</a> and add the results
+              Most lenders here apply one flat limit to each Stock Token and add the results
               up. A rule like that cannot tell a spread portfolio from a single bet. Move the weights and
               see what it misses.
             </p>
@@ -149,9 +149,9 @@ export function Capacity() {
 
             <p className="mt-8 max-w-[44ch] text-[1.12rem] leading-snug text-strong">{verdict}</p>
             <p className="mt-6 max-w-[58ch] text-[13px] leading-relaxed text-muted">
-              Illustrative model on a {usd.format(PORTFOLIO_USD)} USD example portfolio
-              <a href="#note-7" className="fn text-accent" aria-label="Note 7">7</a>. It is not an offer of
-              credit. The parameters Tapehouse lends on are published with the backtest.
+              Illustrative model on a {usd.format(PORTFOLIO_USD)} USD example portfolio. It is not an offer of
+              credit. The parameters Tapehouse lends on are published with the backtest.{" "}
+              <Link href="/methodology" className="text-strong underline">See the assumptions</Link>.
             </p>
           </div>
         </div>
