@@ -37,6 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-theme="light"
       className={`${archivo.variable} ${interTight.variable} ${splineMono.variable} antialiased`}
     >
       <body>

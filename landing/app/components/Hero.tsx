@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { Mark } from "./Mark";
 import { Seal } from "./Seal";
@@ -126,10 +127,10 @@ export function Hero() {
         <div className="hero-scrim" />
 
         <header className="hero-copy relative z-10 mx-auto flex w-full max-w-[1320px] items-center justify-between gap-4 px-5 pt-5 sm:px-8 sm:pt-6">
-          <a href="/" className="flex items-center gap-3" aria-label="Tapehouse, home">
+          <Link href="/" className="flex items-center gap-3" aria-label="Tapehouse, home">
             <Mark className="h-[22px] w-auto" />
             <span className="font-display text-[15px] font-semibold tracking-[0.18em]">TAPEHOUSE</span>
-          </a>
+          </Link>
           <div className="flex items-center gap-3 sm:gap-4">
             <span className="hidden sm:inline-flex">
               <Seal />

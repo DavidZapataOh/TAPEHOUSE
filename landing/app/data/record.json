@@ -1,0 +1,19 @@
+{
+  "sample": true,
+  "token": "SPY",
+  "note": "Sample rows that show the format of the record. They are replaced by the sealed record when the backtest is published.",
+  "weekends": [
+    { "open": "2026-06-29", "band": 0.9, "move": 0.31 },
+    { "open": "2026-07-06", "band": 1.1, "move": -0.48 },
+    { "open": "2026-07-13", "band": 0.8, "move": 1.37 },
+    { "open": "2026-07-20", "band": 1.0, "move": 0.12 },
+    { "open": "2026-07-27", "band": 1.2, "move": -0.95 },
+    { "open": "2026-08-03", "band": 1.4, "move": -2.06 },
+    { "open": "2026-08-10", "band": 1.6, "move": 0.74 },
+    { "open": "2026-08-17", "band": 1.1, "move": 0.29 },
+    { "open": "2026-08-24", "band": 0.9, "move": -0.41 },
+    { "open": "2026-08-31", "band": 1.0, "move": 0.66 },
+    { "open": "2026-09-08", "band": 1.5, "move": -1.71 },
+    { "open": "2026-09-14", "band": 1.2, "move": 0.18 }
+  ]
+}
