@@ -1,26 +1,308 @@
 @import "tailwindcss";
 
+/* ── Layer 0 · warm neutrals ─────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --paper: #f5f2ec;
+  --paper-cool: #faf9f6;
+  --panel: #ffffff;
+  --sunk: #ebe7de;
+  --rule: #dcd6ca;
+  --ink: #1a1713;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Layer 1 · one accent, six stops */
+  --navy-10: #e3e7f0;
+  --navy-20: #c2cce2;
+  --navy-40: #7c8fbf;
+  --navy-60: #3d5795;
+  --navy-80: #16326b;
+  --navy-100: #0e2149;
+  --accent: var(--navy-80);
+  --accent-surface: var(--navy-10);
+  --text-on-accent: #f5f2ec;
+
+  /* Layer 2 · semantics, named for the domain event */
+  --gain: #1c6b4a;
+  --loss: #b0503f;
+  --error: #9e1409;
+  --warning: #8a5a00;
+  --liquidation: #9e1409;
+  --band-area: color-mix(in srgb, var(--accent) 12%, transparent);
+
+  /* Surfaces that never invert: a lit screen in a dark room stays lit. */
+  --always-night: #0b0f1a;
+  --always-bone: #f5f2ec;
+  --always-ink: #1a1713;
+  --always-rule: #dcd6ca;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --paper: #14120e;
+    --paper-cool: #121316;
+    --panel: #1b1813;
+    --sunk: #221e18;
+    --rule: #2f2a22;
+    --ink: #f2efe8;
+    --navy-10: #1b2434;
+    --navy-20: #23314a;
+    --navy-40: #3d5795;
+    --navy-60: #6e88c8;
+    --navy-80: #8fa9e8;
+    --navy-100: #b7c6f0;
+    --text-on-accent: #0e1116;
+    --gain: #5fbf92;
+    --loss: #e59484;
+    --error: #ff7a66;
+    --warning: #e0a93c;
+    --liquidation: #ff7a66;
+    --band-area: color-mix(in srgb, var(--accent) 18%, transparent);
   }
 }
 
+:root[data-theme="dark"] {
+  --paper: #14120e;
+  --paper-cool: #121316;
+  --panel: #1b1813;
+  --sunk: #221e18;
+  --rule: #2f2a22;
+  --ink: #f2efe8;
+  --navy-10: #1b2434;
+  --navy-20: #23314a;
+  --navy-40: #3d5795;
+  --navy-60: #6e88c8;
+  --navy-80: #8fa9e8;
+  --navy-100: #b7c6f0;
+  --text-on-accent: #0e1116;
+  --gain: #5fbf92;
+  --loss: #e59484;
+  --error: #ff7a66;
+  --warning: #e0a93c;
+  --liquidation: #ff7a66;
+  --band-area: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* Text hierarchy by alpha over the ground, never by greys. */
+:root,
+:root[data-theme] {
+  --text-strong: var(--ink);
+  --text-body: color-mix(in srgb, var(--ink) 80%, transparent);
+  --text-muted: color-mix(in srgb, var(--ink) 60%, transparent);
+  --text-faint: color-mix(in srgb, var(--ink) 42%, transparent);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-panel: var(--panel);
+  --color-sunk: var(--sunk);
+  --color-rule: var(--rule);
+  --color-ink: var(--ink);
+  --color-accent: var(--accent);
+  --color-accent-surface: var(--accent-surface);
+  --color-on-accent: var(--text-on-accent);
+  --color-strong: var(--text-strong);
+  --color-body: var(--text-body);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-gain: var(--gain);
+  --color-loss: var(--loss);
+  --color-liquidation: var(--liquidation);
+  --color-warning: var(--warning);
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-inter-tight), system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-spline-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html {
+  color-scheme: light dark;
+  scrollbar-color: var(--rule) var(--paper);
+  scrollbar-width: thin;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--navy-80);
+  color: var(--text-on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+/* Every figure that decides money goes through this class. */
+.num {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1, "case" 0, "zero" 0, "liga" 0, "calt" 0;
+  direction: ltr;
+  letter-spacing: 0.001rem;
+  min-width: 1ch;
+}
+
+.addr {
+  font-family: var(--font-mono);
+  font-feature-settings: "zero" 1;
+}
+
+/* Footnote markers live inside the sentence. */
+.fn {
+  font-size: 0.62em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 0.08em;
+  font-weight: 600;
+  text-decoration: none;
+  font-variant-numeric: lining-nums;
+}
+.fn:hover {
+  text-decoration: underline;
+}
+
+/* ── Hero · the push-in ─────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 280vh;
+  background: var(--always-night);
+}
+.hero-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: clip;
+  color: var(--always-bone);
+  isolation: isolate;
+}
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  transform-origin: var(--ox, 46.9%) var(--oy, 65.8%);
+  transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--scene-scale, 1));
+  filter: brightness(var(--scene-light, 1));
+  will-change: transform;
+}
+.hero-scene img,
+.hero-scene video {
+  position: absolute;
+  left: var(--plate-x, 0px);
+  top: var(--plate-y, 0px);
+  width: var(--plate-w, 100%);
+  height: var(--plate-h, 100%);
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.hero-glow-off {
+  position: absolute;
+  left: var(--gx, 0px);
+  top: var(--gy, 0px);
+  width: var(--gw, 0px);
+  height: var(--gh, 0px);
+  background: #05070d;
+  border-radius: 6%;
+  filter: blur(calc(var(--gw, 0px) * 0.06));
+  opacity: var(--glow-off, 0);
+}
+/* Pull the scene's shadows toward registry navy. */
+.hero-tint {
+  position: absolute;
+  inset: 0;
+  background: #0e2149;
+  mix-blend-mode: soft-light;
+  opacity: 0.85;
+}
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgb(8 11 20 / 0.72) 0%, rgb(8 11 20 / 0.38) 30%, rgb(8 11 20 / 0) 56%),
+    linear-gradient(to top, rgb(8 11 20 / 0.7) 0%, rgb(8 11 20 / 0) 22%);
+  opacity: var(--copy-alpha, 1);
+}
+.hero-copy {
+  opacity: var(--copy-alpha, 1);
+  transform: translateY(calc(var(--copy-lift, 0) * -1px));
+}
+.hero-screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: min(1040px, calc(100vw - 40px));
+  transform-origin: 0 0;
+  transform: translate(var(--px, 0px), var(--py, 0px)) scale(var(--ps, 0.1));
+  opacity: var(--pa, 0);
+  will-change: transform, opacity;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  border-radius: 999px;
+  background: var(--always-bone);
+  color: var(--always-ink);
+  font-weight: 500;
+  padding: 0.82em 1.5em;
+  transition: transform 0.5s var(--ease-out), background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0) scale(0.985);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.82em 1.4em;
+  color: var(--always-bone);
+  background: rgb(245 242 236 / 0.1);
+  box-shadow: inset 0 0 0 1px rgb(245 242 236 / 0.22);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  transition: background-color 0.3s ease, transform 0.5s var(--ease-out);
+}
+.btn-ghost:hover {
+  background: rgb(245 242 236 / 0.18);
+  transform: translateY(-1px);
+}
+
+.hero-stage[data-inside] .hero-copy { pointer-events: none; }
+.hero-stage:not([data-inside]) .hero-screen { pointer-events: none; }
+
+/* One authored entrance: the scene settles, then the words arrive. */
+@keyframes settle {
+  from { transform: scale(1.06); filter: blur(6px) brightness(0.7); }
+  to   { transform: scale(1); filter: blur(0) brightness(1); }
+}
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(14px); filter: blur(4px); }
+  to   { opacity: 1; transform: none; filter: none; }
+}
+.hero-settle { animation: settle 2.2s var(--ease-out) both; }
+.arrive { animation: arrive 1.1s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 110ms + 350ms); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero { height: auto; }
+  .hero-stage { position: relative; height: auto; min-height: 100svh; overflow: visible; }
+  .hero-scene { position: absolute; height: 100svh; transform: none; filter: none; }
+  .hero-glow-off { display: none; }
+  .hero-screen { position: relative; transform: none; opacity: 1; margin: 22svh auto 0; padding-bottom: 8svh; }
+  .hero-settle, .arrive { animation: none; }
 }

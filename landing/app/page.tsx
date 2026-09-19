@@ -1,69 +1,50 @@
-import Image from "next/image";
+import { Hero } from "./components/Hero";
+
+const NOTES = [
+  "Stock Tokens are tokenised securities issued by a third party on Robinhood Chain. They give economic exposure to an underlying share or fund; they are not the share itself.",
+  "While the underlying market is closed, Tapehouse prices each Stock Token from around-the-clock sources and publishes a confidence band that widens with source disagreement, source age and volatility.",
+  "Gaps between consecutive updates of the reference equity price feed on Robinhood Chain, read on-chain across weekends in August and September 2026. The longest, 80.8 hours, spans the Labor Day weekend.",
+  "An around-the-clock price source, sampled at ten-minute resolution across one full 48-hour weekend: 288 of 288 expected points, longest gap 600 seconds.",
+  "Share of SPY Stock Token transfers on Robinhood Chain that occurred on a Saturday or Sunday, over 69 consecutive days. A uniform week would give 28.6%.",
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <Hero />
+
+      <section id="measured" className="border-b border-rule bg-paper">
+        <div className="mx-auto max-w-[1320px] px-5 py-[clamp(5rem,12vw,9.5rem)] sm:px-8">
+          <h2 className="max-w-[18ch] text-balance font-display text-[clamp(2rem,4.2vw,3.5rem)] font-normal leading-[1.06] tracking-[-0.028em] text-strong">
+            The market closes on Friday. Your loan doesn’t.
+          </h2>
+          <p className="mt-8 max-w-[62ch] text-pretty text-[clamp(1.1rem,1.5vw,1.35rem)] leading-[1.55] text-body">
+            We measured it before we built it. Every weekend the reference price feed on this chain goes
+            silent for <span className="num font-semibold text-strong">55.7 to 80.8 hours</span>
+            <a href="#note-3" className="fn text-accent" aria-label="Note 3">3</a>, while an
+            around-the-clock source kept answering{" "}
+            <span className="num font-semibold text-strong">288 times out of 288</span>
+            <a href="#note-4" className="fn text-accent" aria-label="Note 4">4</a>. People don’t stop
+            either: <span className="num font-semibold text-strong">29.9%</span> of SPY transfers happen
+            on a Saturday or a Sunday
+            <a href="#note-5" className="fn text-accent" aria-label="Note 5">5</a>.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <footer className="bg-paper">
+        <div className="mx-auto grid max-w-[1320px] gap-x-16 gap-y-6 px-5 py-14 sm:px-8 lg:grid-cols-[14rem_1fr]">
+          <h2 className="font-display text-[15px] font-semibold text-strong">Disclaimers and footnotes</h2>
+          <ol className="max-w-[78ch] space-y-3.5 text-[13.5px] leading-[1.55] text-muted">
+            {NOTES.map((note, i) => (
+              <li key={i} id={`note-${i + 1}`} className="flex gap-3 scroll-mt-24">
+                <span className="num w-4 shrink-0 font-semibold text-accent">{i + 1}</span>
+                <span>{note}</span>
+              </li>
+            ))}
+          </ol>
         </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
