@@ -1,5 +1,5 @@
 import record from "../data/record.json";
-import { AssetSlot } from "./AssetSlot";
+import { Artwork } from "./Artwork";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const day = (iso: string) => {
@@ -28,12 +28,7 @@ export function Record() {
               <a href="#note-8" className="fn text-accent" aria-label="Note 8">8</a>.
             </p>
           </div>
-          <AssetSlot
-            id="I3"
-            className="hidden min-h-[15rem] lg:flex"
-            brief="A stack of sealed record cards, one pulled slightly out of line."
-            spec="3D still or loop · bone material, navy shadow · 4:5"
-          />
+          <Artwork src="/art/i3-cards.jpg" alt="A tall stack of sealed cards with one pulled out of line." className="order-first lg:order-none" />
         </div>
 
         {record.sample && (

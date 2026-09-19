@@ -1,4 +1,4 @@
-import { AssetSlot } from "./AssetSlot";
+import { Artwork } from "./Artwork";
 
 const FOLDS = [
   {
@@ -50,12 +50,7 @@ export function Method() {
               Tokens on a Sunday. Here is ours, with everything required to prove us wrong.
             </p>
           </div>
-          <AssetSlot
-            id="I2"
-            className="hidden min-h-[15rem] lg:flex"
-            brief="Two machined parts meeting: a connector seating into its socket."
-            spec="3D still or loop · bone material, navy shadow · 4:5"
-          />
+          <Artwork src="/art/i2-socket.jpg" alt="A plug with three pegs hovering just above the block it fits into." className="order-first lg:order-none" />
         </div>
 
         <div className="mt-[clamp(3rem,6vw,5rem)] grid gap-x-16 gap-y-12 lg:grid-cols-[1fr_1.1fr]">

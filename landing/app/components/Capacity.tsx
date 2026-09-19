@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AssetSlot } from "./AssetSlot";
+import { Artwork } from "./Artwork";
 
 /**
  * Chapter four: the same portfolio, priced two ways.
@@ -84,12 +84,7 @@ export function Capacity() {
               see what it misses.
             </p>
           </div>
-          <AssetSlot
-            id="I1"
-            className="hidden min-h-[15rem] lg:flex"
-            brief="Four weights on four separate scales, beside the same four weights on one beam."
-            spec="3D still or loop · bone material, navy shadow · 4:5"
-          />
+          <Artwork src="/art/i1-beam.jpg" alt="Four blocks of different sizes standing on one beam, balanced level on a single fulcrum." className="order-first lg:order-none" />
         </div>
 
         <div className="mt-[clamp(3rem,6vw,5rem)] grid gap-x-16 gap-y-12 border-t border-rule pt-10 lg:grid-cols-[1fr_1.15fr]">
