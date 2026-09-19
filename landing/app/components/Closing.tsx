@@ -15,7 +15,7 @@ export function Closing() {
       />
       <div className="absolute inset-0 bg-[#0e2149] opacity-[0.78] mix-blend-multiply" aria-hidden="true" />
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgb(14_33_73/0.55)_0%,rgb(14_33_73/0)_70%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_120%_38%_at_50%_47%,rgb(10_22_50/0.92)_0%,rgb(10_22_50/0.8)_55%,rgb(10_22_50/0)_100%)] sm:bg-[radial-gradient(ellipse_46%_40%_at_50%_50%,rgb(10_22_50/0.9)_0%,rgb(10_22_50/0.72)_45%,rgb(10_22_50/0)_100%)]"
         aria-hidden="true"
       />
       <div className="shell relative flex min-h-[88svh] flex-col items-center justify-center pb-28 pt-44 text-center">
