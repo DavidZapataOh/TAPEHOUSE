@@ -25,7 +25,7 @@ Portfolio margin for Stock Tokens. The whole portfolio backs one loan, so a dive
 ## Operating Context
 
 - Underlying equity markets are closed for most of the week, while Stock Tokens trade on-chain around the clock. A meaningful share of on-chain activity happens at weekends.
-- Reference price feeds for equities stop updating while the market is closed. The product's price band widens with source disagreement, source age and volatility, and declares its own state: open, closed, or degraded.
+- Reference price feeds for equities stop updating while the market is closed. The product's price band widens when live sources disagree, when the price moves fast, and when fewer sources answer; a source that has gone quiet is set aside, never averaged in. It declares its own state: open, closed, degraded or halted.
 - The session state is always visible next to any money figure, as a compact status seal stating the state, the hours elapsed and the number of live price sources.
 - The launch surface is Robinhood Chain testnet. The landing page's primary action opens the app on testnet.
 
@@ -55,7 +55,8 @@ Portfolio margin for Stock Tokens. The whole portfolio backs one loan, so a dive
 - Measured: the reference equity feed on this chain falls silent for 55.7 to 80.8 hours every weekend.
 - Measured: an around-the-clock price source served 288 of 288 expected data points across a full weekend.
 - Measured: 29.9% of SPY token transfers on this chain occur at weekends.
-- A sealed, hash-chained record of the band's own predictions, graded against the first fresh market print.
+- A live record of the band graded against the first fresh market print after each weekend (one weekend so far, graded after the fact and marked as such).
+- A reproducible on-chain stress test: the band fed only the DEX price, 30 reopenings over 9 weekends, wrong 8 times.
 - Absent, and not to be fabricated: customers, testimonials, press, audits, total value locked, and the headline capacity figure.
 
 ## Product Principles

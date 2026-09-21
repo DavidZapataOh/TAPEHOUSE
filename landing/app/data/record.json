@@ -1,19 +1,296 @@
 {
-  "sample": true,
-  "token": "SPY",
-  "note": "Sample rows that show the format of the record. They are replaced by the sealed record when the backtest is published.",
-  "weekends": [
-    { "open": "2026-06-29", "band": 0.9, "move": 0.31 },
-    { "open": "2026-07-06", "band": 1.1, "move": -0.48 },
-    { "open": "2026-07-13", "band": 0.8, "move": 1.37 },
-    { "open": "2026-07-20", "band": 1.0, "move": 0.12 },
-    { "open": "2026-07-27", "band": 1.2, "move": -0.95 },
-    { "open": "2026-08-03", "band": 1.4, "move": -2.06 },
-    { "open": "2026-08-10", "band": 1.6, "move": 0.74 },
-    { "open": "2026-08-17", "band": 1.1, "move": 0.29 },
-    { "open": "2026-08-24", "band": 0.9, "move": -0.41 },
-    { "open": "2026-08-31", "band": 1.0, "move": 0.66 },
-    { "open": "2026-09-08", "band": 1.5, "move": -1.71 },
-    { "open": "2026-09-14", "band": 1.2, "move": 0.18 }
-  ]
+  "generated": "2026-09-21",
+  "live": {
+    "sealed": false,
+    "entries": [
+      {
+        "reopen": "2026-09-21",
+        "token": "NVDA",
+        "weekendMovePct": 0.16,
+        "mid": 222.5,
+        "halfBps": 55,
+        "open": 222.8,
+        "errorBps": 13.6,
+        "inside": true,
+        "bandAt": "2026-09-20T23:59:09Z",
+        "openAt": "2026-09-21T00:00:20Z"
+      },
+      {
+        "reopen": "2026-09-21",
+        "token": "TSLA",
+        "weekendMovePct": 0.38,
+        "mid": 365.37,
+        "halfBps": 55,
+        "open": 365.19,
+        "errorBps": -4.8,
+        "inside": true,
+        "bandAt": "2026-09-20T23:59:09Z",
+        "openAt": "2026-09-21T00:00:39Z"
+      },
+      {
+        "reopen": "2026-09-21",
+        "token": "AAPL",
+        "weekendMovePct": 0.04,
+        "mid": 335.05,
+        "halfBps": 55,
+        "open": 335.53,
+        "errorBps": 14.4,
+        "inside": true,
+        "bandAt": "2026-09-20T23:59:09Z",
+        "openAt": "2026-09-21T00:00:20Z"
+      }
+    ]
+  },
+  "stress": {
+    "source": "Uniswap v3 pools, 30-minute time-weighted price before each reopening",
+    "weekends": 9,
+    "entries": [
+      {
+        "reopen": "2026-07-27",
+        "token": "NVDA",
+        "weekendMovePct": 1.18,
+        "errorBps": -23.8,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-03",
+        "token": "NVDA",
+        "weekendMovePct": 1.07,
+        "errorBps": 61.8,
+        "halfBps": 55,
+        "inside": false
+      },
+      {
+        "reopen": "2026-08-10",
+        "token": "NVDA",
+        "weekendMovePct": 0.21,
+        "errorBps": -19.7,
+        "halfBps": 67,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-17",
+        "token": "NVDA",
+        "weekendMovePct": -0.12,
+        "errorBps": -23.1,
+        "halfBps": 148,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-24",
+        "token": "NVDA",
+        "weekendMovePct": 1.17,
+        "errorBps": -74.6,
+        "halfBps": 66,
+        "inside": false
+      },
+      {
+        "reopen": "2026-08-31",
+        "token": "NVDA",
+        "weekendMovePct": -0.82,
+        "errorBps": -64.2,
+        "halfBps": 55,
+        "inside": false
+      },
+      {
+        "reopen": "2026-09-08",
+        "token": "NVDA",
+        "weekendMovePct": 0.37,
+        "errorBps": -26.3,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-09-14",
+        "token": "NVDA",
+        "weekendMovePct": -1.12,
+        "errorBps": 33.5,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-09-21",
+        "token": "NVDA",
+        "weekendMovePct": 0.16,
+        "errorBps": 19.4,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-07-27",
+        "token": "TSLA",
+        "weekendMovePct": 1.26,
+        "errorBps": 24.9,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-03",
+        "token": "TSLA",
+        "weekendMovePct": 0.92,
+        "errorBps": -42.0,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-17",
+        "token": "TSLA",
+        "weekendMovePct": 0.25,
+        "errorBps": 11.5,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-24",
+        "token": "TSLA",
+        "weekendMovePct": 1.15,
+        "errorBps": 57.0,
+        "halfBps": 55,
+        "inside": false
+      },
+      {
+        "reopen": "2026-08-31",
+        "token": "TSLA",
+        "weekendMovePct": -0.59,
+        "errorBps": -64.1,
+        "halfBps": 55,
+        "inside": false
+      },
+      {
+        "reopen": "2026-09-08",
+        "token": "TSLA",
+        "weekendMovePct": 0.05,
+        "errorBps": -33.3,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-09-14",
+        "token": "TSLA",
+        "weekendMovePct": -1.09,
+        "errorBps": -48.1,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-09-21",
+        "token": "TSLA",
+        "weekendMovePct": 0.38,
+        "errorBps": 21.9,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-03",
+        "token": "AAPL",
+        "weekendMovePct": 0.95,
+        "errorBps": -37.9,
+        "halfBps": 91,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-10",
+        "token": "AAPL",
+        "weekendMovePct": -0.11,
+        "errorBps": 2.9,
+        "halfBps": 119,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-17",
+        "token": "AAPL",
+        "weekendMovePct": 0.1,
+        "errorBps": -8.6,
+        "halfBps": 72,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-24",
+        "token": "AAPL",
+        "weekendMovePct": 0.43,
+        "errorBps": -2.9,
+        "halfBps": 77,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-31",
+        "token": "AAPL",
+        "weekendMovePct": -0.11,
+        "errorBps": -59.4,
+        "halfBps": 55,
+        "inside": false
+      },
+      {
+        "reopen": "2026-09-08",
+        "token": "AAPL",
+        "weekendMovePct": -0.06,
+        "errorBps": -7.3,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-09-14",
+        "token": "AAPL",
+        "weekendMovePct": -0.25,
+        "errorBps": 24.8,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-09-21",
+        "token": "AAPL",
+        "weekendMovePct": 0.04,
+        "errorBps": 3.5,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-08-24",
+        "token": "SPY",
+        "weekendMovePct": 0.08,
+        "errorBps": -58.5,
+        "halfBps": 58,
+        "inside": false
+      },
+      {
+        "reopen": "2026-08-31",
+        "token": "SPY",
+        "weekendMovePct": -0.54,
+        "errorBps": -124.0,
+        "halfBps": 55,
+        "inside": false
+      },
+      {
+        "reopen": "2026-09-08",
+        "token": "SPY",
+        "weekendMovePct": -0.08,
+        "errorBps": -47.9,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-09-14",
+        "token": "SPY",
+        "weekendMovePct": -0.68,
+        "errorBps": -1.7,
+        "halfBps": 55,
+        "inside": true
+      },
+      {
+        "reopen": "2026-09-21",
+        "token": "SPY",
+        "weekendMovePct": 0.49,
+        "errorBps": 3.2,
+        "halfBps": 55,
+        "inside": true
+      }
+    ]
+  },
+  "baseline": {
+    "reopenings": 48,
+    "weekends": 12,
+    "medianGapBps": 34.1,
+    "maxGapBps": 132.9
+  }
 }

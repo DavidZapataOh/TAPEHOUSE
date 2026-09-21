@@ -57,16 +57,50 @@ export default function Methodology() {
       </Entry>
       <Entry heading="The price band">
         <p>
-          While the underlying market is closed, Tapehouse prices each Stock Token from around-the-clock
-          sources and publishes a confidence band. Three things widen it: how far the sources disagree, how
-          old each source is, and how volatile the token has been.
+          The band answers one question: what is this token worth right now, and how sure are we. Its
+          centre is the live around-the-clock price. Three things widen it: live sources that disagree, a
+          price that is moving fast, and fewer sources answering. A reference feed that has gone quiet for
+          the weekend is set aside, never averaged in, and never used to widen the band on its own.
+        </p>
+        <p>
+          How far the price might move before anyone can act is a different question. It belongs to the
+          margin engine, not to the band.
+        </p>
+        <p>
+          With one source live, as at a weekend, the band is ±0.55%. That calibration is provisional: it
+          rests on a small number of reopenings in a calm month.
         </p>
       </Entry>
-      <Entry heading="The record">
+      <Entry heading="The live record">
         <p>
-          Each Sunday night the expected Monday band is sealed; each Monday the first fresh market print
-          grades it. The rows currently shown on the overview are sample rows that illustrate the format,
-          and are marked as such. They are replaced by the sealed record when the backtest is published.
+          For each reopening we take the band from the last sample before 00:00 UTC on Monday, when the
+          reference equity feed on Robinhood Chain resumes, and compare its centre with the first price
+          that feed publishes. Nothing later than the band’s own timestamp is used.
+        </p>
+        <p>
+          The first weekend, 21 September 2026, was graded after the fact from our own minute-by-minute
+          capture and is marked as such. Later entries are sealed and timestamped before the reopening.
+        </p>
+      </Entry>
+      <Entry heading="The stress test">
+        <p>
+          The same band fed a single, deliberately weak source: the thirty-minute time-weighted price of
+          the Uniswap v3 pool for each token against USDG, built from swap events read from the chain and
+          ending at the reopening. It is graded the same way, against the first reference print after a
+          silence of thirty hours or more. It covers the nine weekends for which those pools existed, from
+          27 July to 21 September 2026: thirty reopenings across NVDA, TSLA, AAPL and SPY.
+        </p>
+        <p>
+          At a weekend the on-chain price carries a premium or a discount of up to about 1.2%, because
+          liquidity is thin. That gap is not noise to a lender: it is the price a liquidation would
+          actually get. Tapehouse accounts for it in the margin engine.
+        </p>
+      </Entry>
+      <Entry heading="Friday’s price, carried through the weekend">
+        <p>
+          The change from the last reference print before each weekend to the first one after it, over all
+          forty-eight reopenings of NVDA, TSLA, AAPL and SPY since 1 July 2026, read from the chain. The
+          median is 0.34% and the largest 1.33%.
         </p>
       </Entry>
     </PlainPage>

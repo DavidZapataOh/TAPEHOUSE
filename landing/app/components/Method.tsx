@@ -3,7 +3,7 @@ import { Artwork } from "./Artwork";
 const FOLDS = [
   {
     q: "How the band is built",
-    a: "Three things widen it: how far the price sources disagree, how old each source is, and how volatile the token has been. The parameters are fixed and public, so anyone can recompute last Sunday’s band and check it against ours.",
+    a: "Three things widen it: live sources that disagree, a price that is moving fast, and fewer sources answering. A source that has gone quiet for the weekend is set aside, never averaged in. The parameters are public, so anyone can recompute last Sunday’s band and check it against ours.",
   },
   {
     q: "What happens when a source fails",
