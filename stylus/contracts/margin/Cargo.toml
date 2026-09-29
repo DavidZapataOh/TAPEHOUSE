@@ -1,5 +1,5 @@
 [package]
-name = "band"
+name = "margin"
 version = "0.1.0"
 edition = "2024"
 
@@ -10,7 +10,6 @@ ownable = { path = "../../crates/ownable" }
 stylus-sdk = "0.10.9"
 
 [dev-dependencies]
-alloy-primitives = { version = "1.5.7", features = ["k256"] }
 stylus-sdk = { version = "0.10.9", features = ["stylus-test"] }
 proptest = { version = "1.11.0", default-features = false, features = ["std"] }
 serde_json = "1.0.151"
