@@ -13,6 +13,7 @@ import { WalletControl } from "./WalletControl";
 export const SECTIONS = [
   { href: "/", label: "Account" },
   { href: "/earn", label: "Earn" },
+  { href: "/trade", label: "Trade" },
   { href: "/simulator", label: "Simulator" },
 ] as const;
 
